@@ -7,9 +7,16 @@ import { Product }          from './interfaces/product.interface';
 @Controller('products')
 export class ProductsController {
 
+
     constructor(
         private productsService: ProductsService
     ){}
+
+    @Get('newitem')
+    newitem():any{
+	    return 'Hello';
+    }
+    
 
     @Post()
     async create( @Body() product: CreateProductDTO ) : Promise<Product[]> {
